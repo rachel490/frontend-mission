@@ -1,9 +1,9 @@
 <template>
   <div>
     <input type="text" v-model="inputValue" />
-    <button id="submit-btn" type="button" @click="rotate">제출</button>
-    <button id="alert-btn" type="button" @click="alarm">알림</button>
-    <p data-test="string-rotation">{{ value }}</p>
+    <button data-test="submit-btn" type="button" @click="rotate">제출</button>
+    <button data-test="alert-btn" type="button" @click="alarm">알림</button>
+    <p data-test="string-rotation">{{ inputValue }}</p>
   </div>
 </template>
 
@@ -11,7 +11,7 @@
 export default {
   data() {
     return {
-      inputValue: '',
+      inputValue: 'Ably',
       count: 0,
     };
   },
