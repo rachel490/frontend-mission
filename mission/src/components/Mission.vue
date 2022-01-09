@@ -2,7 +2,7 @@
   <div>
     <input type="text" v-model="value" />
     <button type="button" v-on:click="move">제출</button>
-    <button type="button">알림</button>
+    <button type="button" v-on:click="alarm">알림</button>
     <p>{{ value }}</p>
   </div>
 </template>
@@ -11,7 +11,8 @@
 export default {
   data() {
     return {
-      value: "",
+      value: '',
+      count: 0,
     };
   },
   methods: {
@@ -19,7 +20,11 @@ export default {
       const str = [...this.value];
       str.push(str[0]);
       str.shift();
-      this.value = str.join("");
+      this.value = str.join('');
+    },
+    alarm() {
+      this.count += 1;
+      alert(`${this.value} ${this.count}`);
     },
   },
 };
