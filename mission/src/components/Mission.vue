@@ -1,9 +1,9 @@
 <template>
   <div>
-    <input type="text" v-model="value" />
-    <button type="button" v-on:click="move">제출</button>
-    <button type="button" v-on:click="alarm">알림</button>
-    <p>{{ value }}</p>
+    <input type="text" v-model="inputValue" />
+    <button id="submit-btn" type="button" @click="rotate">제출</button>
+    <button id="alert-btn" type="button" @click="alarm">알림</button>
+    <p data-test="string-rotation">{{ value }}</p>
   </div>
 </template>
 
@@ -11,20 +11,20 @@
 export default {
   data() {
     return {
-      value: '',
+      inputValue: '',
       count: 0,
     };
   },
   methods: {
-    move() {
-      const str = [...this.value];
+    rotate() {
+      const str = [...this.inputValue];
       str.push(str[0]);
       str.shift();
-      this.value = str.join('');
+      this.inputValue = str.join('');
     },
     alarm() {
       this.count += 1;
-      alert(`${this.value} ${this.count}`);
+      alert(`${this.inputValue} ${this.count}`);
     },
   },
 };
