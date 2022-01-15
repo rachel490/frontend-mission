@@ -1,24 +1,23 @@
 <template>
-<div id='item-info-page'></div>
+  <div id="item-info-page">
+    <preview-image></preview-image>
+    <main-info></main-info>
+  </div>
 </template>
 
 <script>
+import MainInfo from '../components/MainInfo.vue';
+import PreviewImage from '../components/PreviewImage.vue';
+
 export default {
+  components: { PreviewImage, MainInfo },
   name: 'ItemInfoPage',
   data() {
-    return {
-
-    };
+    return {};
   },
-  methods: {
-
-  },
-  computed: {
-
-  },
+  methods: {},
+  computed: {},
 };
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
