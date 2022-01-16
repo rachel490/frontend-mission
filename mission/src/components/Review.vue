@@ -2,7 +2,7 @@
   <div id="reviewSection">
     <h2>리뷰 706개</h2>
     <ul>
-      <review-card :review="reviewData[0]"/>
+      <review-card v-for="(review,idx) in reviewData" v-bind:key="idx" :review="review"/>
     </ul>
   </div>
 </template>

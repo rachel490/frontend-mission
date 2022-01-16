@@ -15,9 +15,7 @@
       </div>
     </div>
     <div id="reviewImgList">
-    	<img class="reviewImg" v-bind:src="review.images[0]"/>
-    	<img class="reviewImg" v-bind:src="review.images[1]" />
-    	<img class="reviewImg" v-bind:src="review.images[2]" />
+    	<img class="reviewImg"  v-for="(img,idx) in review.images" v-bind:src="img" v-bind:key="idx" />
     </div>
 	<!-- <div>
 		<p>옵션 <span>롱ver / M</span></p>
