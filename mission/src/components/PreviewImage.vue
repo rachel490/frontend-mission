@@ -11,7 +11,7 @@
 export default {};
 </script>
 
-<style>
+<style scoped>
 img {
     display: block;
     width: 375px;
