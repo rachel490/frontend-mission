@@ -2,22 +2,22 @@
   <li id="reviewCardItem">
     <div id="reviewHeader">
       <div>
-        <h3>만족해요</h3>
-        <span class="subtext">최**</span>
+        <h3>{{review.title}}</h3>
+        <span class="subtext">{{review.name}}</span>
         <span class="subtext"> | </span>
-        <span class="subtext">2022.01.09</span>
+        <span class="subtext">{{review.time}}</span>
       </div>
       <div id="likesBtn">
         <button>
           <fa :icon="['far', 'thumbs-up']" id="likes" />
         </button>
-        <label for="likes">537</label>
+        <label for="likes">{{review.likes}}</label>
       </div>
     </div>
     <div id="reviewImgList">
-    	<img class="reviewImg" src="http://ririgirl.co.kr/web/upload/NNEditor/20210602/7_shop1_121322.jpg" />
-    	<img class="reviewImg" src="http://ririgirl.co.kr/web/upload/NNEditor/20210602/8_shop1_121322.jpg" />
-    	<img class="reviewImg" src="http://ririgirl.co.kr/web/upload/NNEditor/20210602/9_shop1_121322.jpg" />
+    	<img class="reviewImg" v-bind:src="review.images[0]"/>
+    	<img class="reviewImg" v-bind:src="review.images[1]" />
+    	<img class="reviewImg" v-bind:src="review.images[2]" />
     </div>
 	<!-- <div>
 		<p>옵션 <span>롱ver / M</span></p>
@@ -25,12 +25,15 @@
 		<p>사이즈 <span>잘 맞아요</span></p>
 		<p>색상 <span>화면과 같아요</span></p>
 	</div> -->
-	<p id="reviewText" >믿고 구매했어요! 너무 좋아요! 아무곳에나 쉽게 매칭할 수 있는 옷인것 같아요. 키가 작으시다면 조금 클수 있을 것 같긴 하지만 160이상이면 괜찮을 것 같습니다.</p>
+	<p id="reviewText" >{{review.text}}</p>
   </li>
 </template>
 
 <script>
-export default {};
+export default {
+	props:['review']
+	
+};
 </script>
 
 <style scoped>

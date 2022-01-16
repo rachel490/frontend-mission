@@ -2,7 +2,7 @@
   <div id="reviewSection">
     <h2>리뷰 706개</h2>
     <ul>
-      <review-card />
+      <review-card :review="reviewData[0]"/>
     </ul>
   </div>
 </template>
@@ -10,7 +10,9 @@
 <script>
 import ReviewCard from './ReviewCard.vue';
 export default {
-  components: { ReviewCard },};
+  components: { ReviewCard },
+  props: ['reviewData']
+};
 </script>
 
 <style scoped>

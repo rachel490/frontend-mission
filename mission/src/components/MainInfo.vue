@@ -6,27 +6,27 @@
         src="https://genially.blob.core.windows.net/genially/users/572758d6cbb6cca108efc052/58c8ff7b1aa00d07004421d3/58c8ff7b1aa00d07004421d4/6138e3af-be71-4886-b9b7-9664d0b9ae17.png"
       />
       <div id="marketMetaInfo">
-        <p id="marketName">Zara</p>
+        <p id="marketName">{{marketInfoData.name}}</p>
         <p id="marketTagList">
-          <span class="marketTag">#러블리</span>
-          <span class="marketTag">#페미닌</span>
-          <span id="marketRate">마켓 만족도 95%</span>
+          <span class="marketTag">#{{marketInfoData.tags[0]}}</span>
+          <span class="marketTag">#{{marketInfoData.tags[1]}}</span>
+          <span id="marketRate">마켓 만족도 {{marketInfoData.rate}}%</span>
         </p>
       </div>
       <div id="marketStarInfo">
         <button id="starBtn">
           <fa :icon="['far', 'star']" style="color: red" />
         </button>
-        <label for="star" id="starText">1,114</label>
+        <label for="star" id="starText">{{marketInfoData.likes}}</label>
       </div>
     </section>
     <section id="itemInfo">
-      <h2 id="itemName">Soft Dress</h2>
+      <h2 id="itemName">{{mainInfoData.name}}</h2>
       <div id="row">
         <div id="itemPriceInfo">
-          <span id="discountRate">4%</span>
-          <span id="discountPrice">29,800원</span>
-          <span id="originalPrice">30,800원</span>
+          <span id="discountRate">{{mainInfoData.salePercentage}}%</span>
+          <span id="discountPrice">{{mainInfoData.salePrice}}원</span>
+          <span id="originalPrice">{{mainInfoData.originalPrice}}원</span>
         </div>
         <button><fa icon="share-alt" id="shareBtn"/></button>
       </div>
@@ -35,7 +35,9 @@
 </template>
 
 <script>
-export default {};
+export default {
+  props: ['marketInfoData', 'mainInfoData']
+};
 </script>
 
 <style scoped>

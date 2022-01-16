@@ -1,25 +1,25 @@
 <template>
-  <div id="item-info-page" >
-    <preview-image></preview-image>
-    <main-info></main-info>
+  <div id="item-info-page">
+    <preview-image :previewImgUrl="product.images.main"></preview-image>
+    <main-info :marketInfoData="product.market" :mainInfoData="product.info"></main-info>
     <div id="detailsSection"><detail-info></detail-info></div>
-    <Review></Review>
-    <Footer></Footer>
+    <Review :reviewData="product.reviews"></Review>
+    <Footer :likesData="product.info.likes"></Footer>
   </div>
 </template>
 
 <script>
-import DetailInfo from '../components/DetailInfo.vue';
-import Footer from '../components/Footer.vue';
-import MainInfo from '../components/MainInfo.vue';
-import PreviewImage from '../components/PreviewImage.vue';
-import Review from '../components/Review.vue'
+import DetailInfo from "../components/DetailInfo.vue";
+import Footer from "../components/Footer.vue";
+import MainInfo from "../components/MainInfo.vue";
+import PreviewImage from "../components/PreviewImage.vue";
+import Review from "../components/Review.vue";
 
-import data from '../data/mock.js';
+import data from "../data/mock.js";
 
 export default {
   components: { PreviewImage, MainInfo, Footer, Review, DetailInfo },
-  name: 'ItemInfoPage',
+  name: "ItemInfoPage",
   data() {
     return {
       product: data,
@@ -32,9 +32,9 @@ export default {
 
 <style scoped>
 #item-info-page {
-  width: 100%; 
+  width: 100%;
   height: auto;
-  z-index:1;
+  z-index: 1;
   background-color: white;
   padding-bottom: 100px;
 }
@@ -43,9 +43,7 @@ export default {
   background-color: white;
   width: 100%;
   padding: 10px;
-  border-bottom: 1px solid rgba(0,0,0,.1);
-  border-top: 1px solid rgba(0,0,0,.1);
-
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
-
 </style>
