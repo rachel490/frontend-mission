@@ -23,9 +23,12 @@
     <section id="itemInfo">
       <h2 id="itemName">{{mainInfoData.name}}</h2>
       <div id="row">
-        <div id="itemPriceInfo">
+        <div id="itemPriceInfo" v-if="mainInfoData.onSale">
           <span id="discountRate">{{mainInfoData.salePercentage}}%</span>
           <span id="discountPrice">{{mainInfoData.salePrice}}원</span>
+          <span id="originalPriceOnSale">{{mainInfoData.originalPrice}}원</span>
+        </div>
+        <div id="itemPriceInfo" v-else>
           <span id="originalPrice">{{mainInfoData.originalPrice}}원</span>
         </div>
         <button><fa icon="share-alt" id="shareBtn"/></button>
@@ -138,10 +141,16 @@ img {
   margin-right: 7px;
 }
 
-#originalPrice {
+#originalPriceOnSale {
   color: rgba(0,0,0,.3);
   text-decoration: line-through;
   font-weight: 600;
+}
+
+
+#originalPrice {
+  font-weight: 600;
+  font-size: 20px;
 }
 
 #row {
