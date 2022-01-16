@@ -1,5 +1,5 @@
 <template>
-  <div id="item-info-page">
+  <div id="item-info-page" >
     <preview-image></preview-image>
     <main-info></main-info>
     <div id="detailsSection"><detail-info></detail-info></div>
@@ -15,11 +15,15 @@ import MainInfo from '../components/MainInfo.vue';
 import PreviewImage from '../components/PreviewImage.vue';
 import Review from '../components/Review.vue'
 
+import data from '../data/mock.js';
+
 export default {
   components: { PreviewImage, MainInfo, Footer, Review, DetailInfo },
   name: 'ItemInfoPage',
   data() {
-    return {};
+    return {
+      product: data,
+    };
   },
   methods: {},
   computed: {},

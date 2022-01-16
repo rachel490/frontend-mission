@@ -107,6 +107,7 @@ img {
   align-items: flex-start;
   padding: 15px;
   width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 #itemName {
