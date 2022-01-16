@@ -2,7 +2,7 @@
   <footer>
 	  <div id="likeBtnBox"> 
 		  <button><fa :icon="['far', 'heart']" id="likeBtn"/></button>
-		  <span>2.8만</span>
+		  <span>{{likesData}}</span>
 	  </div>
 	  <button id="buyBtn">구매하기</button>
   </footer>
@@ -10,6 +10,7 @@
 
 <script>
 export default {
+	props: ['likesData']
 
 }
 </script>
