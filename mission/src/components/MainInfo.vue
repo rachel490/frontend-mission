@@ -8,8 +8,7 @@
       <div id="marketMetaInfo">
         <p id="marketName">{{marketInfoData.name}}</p>
         <p id="marketTagList">
-          <span class="marketTag">#{{marketInfoData.tags[0]}}</span>
-          <span class="marketTag">#{{marketInfoData.tags[1]}}</span>
+          <span class="marketTag" v-for="(tag,idx) in marketInfoData.tags" v-bind:key="idx">#{{tag}}</span>
           <span id="marketRate">마켓 만족도 {{marketInfoData.rate}}%</span>
         </p>
       </div>
