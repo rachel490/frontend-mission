@@ -1,23 +1,21 @@
 const products =
   {
-    images: [
-      {
+    images: {
         main: "https://static.zara.net/photos///2022/V/0/1/p/5039/533/720/2/w/1126/5039533720_1_1_1.jpg?ts=1638883106587",
-      },
-    ],
+    },
     market: {
       name: "Zara",
       tags: ["러블리", "페미닌"],
       rate: 95,
-      likes: 1114,
+      likes: "1,114",
     },
     info: {
       name: "Soft Dress",
-      originalPrice: 30800,
+      originalPrice: "30,800",
       likes: "2.8만",
       onSale: true,
       salePercentage: "4",
-      salePrice: 29800,
+      salePrice: "29,800",
     },
     reviews: [
       {
