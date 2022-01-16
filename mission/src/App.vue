@@ -20,5 +20,7 @@
 
 #container {
   width: 375px;
+  height: 100vh;
+  overflow: scroll;
 }
 </style>
