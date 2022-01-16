@@ -20,6 +20,17 @@
         <label for="star" id="starText">1,114</label>
       </div>
     </section>
+    <section id="itemInfo">
+      <h2 id="itemName">Soft Dress</h2>
+      <div id="row">
+        <div id="itemPriceInfo">
+          <span id="discountRate">4%</span>
+          <span id="discountPrice">29,800원</span>
+          <span id="originalPrice">30,800원</span>
+        </div>
+        <button><fa icon="share-alt" id="shareBtn"/></button>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -29,15 +40,13 @@ export default {};
 
 <style scoped>
 #infoContainer {
-  height: 140px;
+  height: 160px;
   width: 100%;
-  background-color: rgb(164, 191, 243);
 }
 
 #marketInfo {
   display: flex;
   align-items: center;
-  background-color: white;
   padding: 15px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
@@ -89,5 +98,58 @@ img {
 
 #marketRate::before {
   content: '﹒';
+}
+
+#itemInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 15px;
+  width: 100%;
+}
+
+#itemName {
+  width: 100%;
+  text-align: start;
+  margin-bottom: 5px;
+  font-size: 20px;
+}
+
+#itemPriceInfo {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+#discountRate {
+  font-size: 20px;
+  color: red;
+  font-weight: 600;
+  margin-right: 7px;
+}
+
+#discountPrice {
+  font-size: 20px;
+  font-weight: 600;
+  margin-right: 7px;
+}
+
+#originalPrice {
+  color: rgba(0,0,0,.3);
+  text-decoration: line-through;
+  font-weight: 600;
+}
+
+#row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+#shareBtn {
+  font-size: 18px;
+  font-weight: 300;
+  color : rgba(0,0,0,.3);
 }
 </style>
