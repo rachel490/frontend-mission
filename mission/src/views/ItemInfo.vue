@@ -1,25 +1,27 @@
 <template>
-  <div id="item-info-page">
-    <preview-image :previewImgUrl="product.images.main"></preview-image>
-    <main-info :marketInfoData="product.market" :mainInfoData="product.info"></main-info>
-    <div id="detailsSection"><detail-info></detail-info></div>
-    <Review :reviewData="product.reviews"></Review>
-    <Footer :likesData="product.info.likes"></Footer>
+  <div id='item-info-page'>
+    <preview-image :previewImgUrl='product.images.main'></preview-image>
+    <main-info :marketInfoData='product.market' :mainInfoData='product.info'></main-info>
+    <div id='detailsSection'><detail-info></detail-info></div>
+    <Review :reviewData='product.reviews'></Review>
+    <Footer :likesData='product.info.likes'></Footer>
   </div>
 </template>
 
 <script>
-import DetailInfo from "../components/DetailInfo.vue";
-import Footer from "../components/Footer.vue";
-import MainInfo from "../components/MainInfo.vue";
-import PreviewImage from "../components/PreviewImage.vue";
-import Review from "../components/Review.vue";
+import DetailInfo from '../components/DetailInfo.vue';
+import Footer from '../components/Footer.vue';
+import MainInfo from '../components/MainInfo.vue';
+import PreviewImage from '../components/PreviewImage.vue';
+import Review from '../components/Review.vue';
 
-import data from "../data/mock.js";
+import data from '../data/mock';
 
 export default {
-  components: { PreviewImage, MainInfo, Footer, Review, DetailInfo },
-  name: "ItemInfoPage",
+  components: {
+    PreviewImage, MainInfo, Footer, Review, DetailInfo,
+  },
+  name: 'ItemInfoPage',
   data() {
     return {
       product: data,

@@ -1,36 +1,40 @@
 <template>
-  <div id="infoContainer">
-    <section id="marketInfo">
+  <div id='infoContainer'>
+    <section id='marketInfo'>
       <img
-        id="marketImgInfo"
-        src="https://genially.blob.core.windows.net/genially/users/572758d6cbb6cca108efc052/58c8ff7b1aa00d07004421d3/58c8ff7b1aa00d07004421d4/6138e3af-be71-4886-b9b7-9664d0b9ae17.png"
+        id='marketImgInfo'
+        src='https://genially.blob.core.windows.net/genially/users/572758d6cbb6cca108efc052/58c8ff7b1aa00d07004421d3/58c8ff7b1aa00d07004421d4/6138e3af-be71-4886-b9b7-9664d0b9ae17.png'
       />
-      <div id="marketMetaInfo">
-        <p id="marketName">{{marketInfoData.name}}</p>
-        <p id="marketTagList">
-          <span class="marketTag" v-for="(tag,idx) in marketInfoData.tags" v-bind:key="idx">#{{tag}}</span>
-          <span id="marketRate">마켓 만족도 {{marketInfoData.rate}}%</span>
+      <div id='marketMetaInfo'>
+        <p id='marketName'>{{marketInfoData.name}}</p>
+        <p id='marketTagList'>
+          <span class='marketTag'
+                v-for='(tag,idx) in marketInfoData.tags'
+                v-bind:key='idx'>
+                  #{{tag}}
+          </span>
+          <span id='marketRate'>마켓 만족도 {{marketInfoData.rate}}%</span>
         </p>
       </div>
-      <div id="marketStarInfo">
-        <button id="starBtn">
-          <fa :icon="['far', 'star']" style="color: red" />
+      <div id='marketStarInfo'>
+        <button id='starBtn'>
+          <fa :icon="['far', 'star']" style='color: red' />
         </button>
-        <label for="star" id="starText">{{marketInfoData.likes}}</label>
+        <label for='star' id='starText'>{{marketInfoData.likes}}</label>
       </div>
     </section>
-    <section id="itemInfo">
-      <h2 id="itemName">{{mainInfoData.name}}</h2>
-      <div id="row">
-        <div id="itemPriceInfo" v-if="mainInfoData.onSale">
-          <span id="discountRate">{{mainInfoData.salePercentage}}%</span>
-          <span id="discountPrice">{{mainInfoData.salePrice}}원</span>
-          <span id="originalPriceOnSale">{{mainInfoData.originalPrice}}원</span>
+    <section id='itemInfo'>
+      <h2 id='itemName'>{{mainInfoData.name}}</h2>
+      <div id='row'>
+        <div id='itemPriceInfo' v-if='mainInfoData.onSale'>
+          <span id='discountRate'>{{mainInfoData.salePercentage}}%</span>
+          <span id='discountPrice'>{{mainInfoData.salePrice}}원</span>
+          <span id='originalPriceOnSale'>{{mainInfoData.originalPrice}}원</span>
         </div>
-        <div id="itemPriceInfo" v-else>
-          <span id="originalPrice">{{mainInfoData.originalPrice}}원</span>
+        <div id='itemPriceInfo' v-else>
+          <span id='originalPrice'>{{mainInfoData.originalPrice}}원</span>
         </div>
-        <button><fa icon="share-alt" id="shareBtn"/></button>
+        <button><fa icon='share-alt' id='shareBtn'/></button>
       </div>
     </section>
   </div>
@@ -38,7 +42,7 @@
 
 <script>
 export default {
-  props: ['marketInfoData', 'mainInfoData']
+  props: ['marketInfoData', 'mainInfoData'],
 };
 </script>
 
@@ -145,7 +149,6 @@ img {
   text-decoration: line-through;
   font-weight: 600;
 }
-
 
 #originalPrice {
   font-weight: 600;

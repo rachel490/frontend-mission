@@ -1,15 +1,15 @@
 <template>
   <div>
     <img
-      v-bind:src="previewImgUrl"
-      alt="mainPreviewImage"
+      v-bind:src='previewImgUrl'
+      alt='mainPreviewImage'
     />
   </div>
 </template>
 
 <script>
 export default {
-  props: ['previewImgUrl']
+  props: ['previewImgUrl'],
 };
 </script>
 
@@ -21,6 +21,5 @@ img {
     object-fit: cover;
     object-position: 50% 70%;
 }
-
 
 </style>
