@@ -24,6 +24,12 @@ describe('ItemListPage', () => {
   })
 
   // Footer있는지 확인 (홈, 찜, 장바구니, 마이페이지)
+  it('renders footer', () => {
+    const wrapper = mount(ItemInfoPage);
+
+    expect(wrapper.get('[data-test="footer"]').exists()).toBe(true);
+    expect(wrapper.get('[data-test="footer"]').text()).toBe('홈,찜,장바구니,마이페이지');
+  })
 });
 
 
