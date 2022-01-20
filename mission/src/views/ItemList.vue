@@ -5,10 +5,10 @@
 
     </ul>
     <footer data-test="footer">
-      <button>홈</button>
-      <button>찜</button>
-      <button>장바구니</button>
-      <button>마이페이지</button>
+      <button><fa icon="home" />홈</button>
+      <button><fa icon="heart" />찜</button>
+      <button><fa icon="shopping-cart" />장바구니</button>
+      <button><fa icon="user" />마이페이지</button>
     </footer>
   </div>
 </template>
@@ -19,10 +19,11 @@ export default {
   data() {
     return {
       title: 'My Shopping Mall',
-    }
-  }
+    };
+  },
 };
 </script>
 
 <style>
+
 </style>
