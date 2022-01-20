@@ -5,10 +5,10 @@
 
     </ul>
     <footer data-test="footer">
-      <button><fa icon="home" />홈</button>
-      <button><fa icon="heart" />찜</button>
-      <button><fa icon="shopping-cart" />장바구니</button>
-      <button><fa icon="user" />마이페이지</button>
+      <button><fa class="icon" icon="home" />홈</button>
+      <button><fa class="icon" icon="heart" />찜</button>
+      <button><fa class="icon" icon="shopping-cart" />장바구니</button>
+      <button><fa class="icon" icon="user" />마이페이지</button>
     </footer>
   </div>
 </template>
@@ -24,6 +24,50 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+#item-list-page {
+  width: 375px;
+  height: 100vh;
+  background-color: bisque;
+  position: relative;
+}
 
+h1 {
+  margin: 0;
+  padding: 10px 0;
+  text-align: center;
+}
+
+footer {
+  width: inherit;
+  background-color: cadetblue;
+  height: 70px;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  text-align: center;
+  width: 25%;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size:14px;
+}
+
+.icon {
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+button:hover {
+  transform: scale(1.1);
+  transition: transform .3s ease-in-out;
+}
 </style>
