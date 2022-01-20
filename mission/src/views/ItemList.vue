@@ -1,6 +1,9 @@
 <template>
   <div id="item-list-page">
     <h1 data-test="title">{{title}}</h1>
+    <ul data-test="product-list">
+
+    </ul>
   </div>
 </template>
 
