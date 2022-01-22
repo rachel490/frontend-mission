@@ -51,6 +51,20 @@ describe('Item', () => {
 
     expect(wrapper.get('[data-test="originalPrice"]').text()).toEqual(wrapper.vm.originalPrice+'원');
   })
+
+  it('renders discount rate when product is on sale', async() => {
+    const wrapper = mount(Item);
+
+    await wrapper.setData({
+      originalPrice: 115000,
+      onSale: true,
+      discountPrice: 89000,
+    })
+
+    const discountRate = Math.round((wrapper.vm.originalPrice-wrapper.vm.discountPrice)/wrapper.vm.originalPrice*100);
+
+    expect(wrapper.get('[data-test="discountRate"]').text()).toEqual(discountRate + '%');
+  })
 });
 
 
