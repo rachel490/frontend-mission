@@ -3,6 +3,7 @@
     <h1>product list</h1>
     <img data-test="img" v-bind:src="img" />
     <span data-test="originalPrice">{{originalPrice}}원</span>
+    <span data-test="discountRate">{{discountRate}}%</span>
     <h2 data-test="name">{{name}}</h2>
     <p data-test="desc">{{desc}}</p>
   </div>
@@ -17,8 +18,16 @@ export default {
       name: 'basic cotton tshirt',
       desc: '100% cotton, made in korea.',
       originalPrice: 200000,
+      onSale: true,
+      discountPrice: 120000,
+      
     };
   },
+  computed: {
+    discountRate() {
+      return Math.round((this.originalPrice - this.discountPrice)/this.originalPrice*100);
+    }
+  }
 };
 </script>
 
