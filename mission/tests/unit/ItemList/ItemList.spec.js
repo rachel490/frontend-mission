@@ -10,7 +10,7 @@ describe('ItemListPage', () => {
 
   // 제목있는지 확인 
   it('renders title', () => {
-    const wrapper = mount(ItemInfoPage);
+    const wrapper = mount(ItemListPage);
     const title = 'My Shopping Mall';
 
     expect(wrapper.get('[data-test="title"]').text()).toBe(title);
@@ -18,14 +18,14 @@ describe('ItemListPage', () => {
 
   // Item 있는지 확인
   it('renders product item list', () => {
-    const wrapper = mount(ItemInfoPage);
+    const wrapper = mount(ItemListPage);
 
     expect(wrapper.get('[data-test="product-list"]').exists()).toBe(true);
   })
 
   // Footer있는지 확인 (홈, 찜, 장바구니, 마이페이지)
   it('renders footer', () => {
-    const wrapper = mount(ItemInfoPage);
+    const wrapper = mount(ItemListPage);
 
     expect(wrapper.get('[data-test="footer"]').exists()).toBe(true);
     expect(wrapper.get('[data-test="footer"]').text()).toBe('홈찜장바구니마이페이지');
