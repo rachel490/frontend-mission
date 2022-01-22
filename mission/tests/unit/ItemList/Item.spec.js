@@ -30,10 +30,20 @@ describe('Item', () => {
 
     expect(wrapper.get('[data-test="name"]').text()).toEqual(wrapper.vm.name);
   })
+
+  //product 설명있는지 확인
+  it('render product description', async() => {
+    const wrapper = mount(Item);
+
+    await wrapper.setData({
+      desc : "coat is grey. great for daily outfits"
+    })
+
+    expect(wrapper.get('[data-test="desc"]').text()).toEqual(wrapper.vm.desc);
+  })
 });
 
 
-// product 이름있는지 확인
 // product 가격있는지 확인
 // product description있는지 확인
 // product 할인이있는 경우 할인율 조건부 렌더링되는지 확인
