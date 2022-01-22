@@ -41,9 +41,17 @@ describe('Item', () => {
 
     expect(wrapper.get('[data-test="desc"]').text()).toEqual(wrapper.vm.desc);
   })
+
+  it('render product price', async() => {
+    const wrapper = mount(Item);
+
+    await wrapper.setData({
+      originalPrice : 115000
+    })
+
+    expect(wrapper.get('[data-test="originalPrice"]').text()).toEqual(wrapper.vm.originalPrice+'원');
+  })
 });
 
 
-// product 가격있는지 확인
-// product description있는지 확인
 // product 할인이있는 경우 할인율 조건부 렌더링되는지 확인
