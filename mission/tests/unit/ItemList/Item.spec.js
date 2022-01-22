@@ -19,6 +19,17 @@ describe('Item', () => {
   expect(wrapper.find('img').exists()).toBe(true);
   expect(wrapper.find('img').attributes('src')).toEqual(wrapper.vm.img);
   })
+
+  //product 이름있는지 확인
+  it('render product name', async() => {
+    const wrapper = mount(Item);
+
+    await wrapper.setData({
+      name : 'trench coat'
+    })
+
+    expect(wrapper.get('[data-test="name"]').text()).toEqual(wrapper.vm.name);
+  })
 });
 
 
