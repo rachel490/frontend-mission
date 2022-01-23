@@ -2,7 +2,17 @@
   <div id="item-list-page">
     <h1 data-test="title">{{title}}</h1>
     <ul data-test="product-list">
-
+      <item />
+      <item />
+      <item />
+      <item />
+      <item />
+      <item />
+      <item />
+      <item />
+      <item />
+      <item />
+      <item />
     </ul>
     <footer data-test="footer">
       <button><fa class="icon" icon="home" />홈</button>
@@ -14,7 +24,10 @@
 </template>
 
 <script>
+import Item from '../components/ItemList/Item.vue';
+
 export default {
+  components: { Item },
   name: 'ItemListPage',
   data() {
     return {
@@ -27,9 +40,19 @@ export default {
 <style scoped>
 #item-list-page {
   width: 375px;
-  height: 100vh;
+  height: auto;
+  padding-bottom: 60px;
   background-color: bisque;
   position: relative;
+}
+
+ul {
+  margin: 0;
+  padding : 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 h1 {
