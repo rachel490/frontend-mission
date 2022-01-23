@@ -12,7 +12,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 h1 {
   margin: 0;
   padding: 10px 0;

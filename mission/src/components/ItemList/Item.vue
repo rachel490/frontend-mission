@@ -2,10 +2,10 @@
   <div class="item-list-item" id="container">
     <img data-test="img" v-bind:src="product.img" />
     <div>
-      <span data-test="discountRate" id="discountRate" v-if="this.product.onSale">
+      <span data-test="discountRate" id="discountRate" v-if="product.onSale">
         {{this.discountRate}}%
       </span>
-      <span data-test="price" id="price">{{product.originalPrice}}원</span>
+      <span data-test="price" id="originalPrice">{{product.originalPrice}}원</span>
     </div>
     <span data-test="name">{{product.name}}</span>
     <p data-test="desc">{{product.desc}}</p>
@@ -32,7 +32,6 @@ export default {
       } else {
         percent = null;
       }
-      console.log('discounted', percent);
       return percent;
     },
   },
@@ -66,7 +65,7 @@ img {
   margin-right: 10px;
 }
 
-#price {
+#originalPrice {
   font-weight: 600;
   font-size: 15px;
 }
