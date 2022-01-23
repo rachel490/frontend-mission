@@ -1,29 +1,25 @@
 <template>
   <div id="item-list-page">
-    <h1 data-test="title">{{title}}</h1>
+    <Header />
     <ul data-test="product-list">
       <item v-for="(item,idx) in productData" v-bind:key="idx" v-bind:product="item" />
       <item v-for="(item,idx) in productData" v-bind:key="idx" v-bind:product="item" />
     </ul>
-    <footer data-test="footer">
-      <button><fa class="icon" icon="home" />홈</button>
-      <button><fa class="icon" icon="heart" />찜</button>
-      <button><fa class="icon" icon="shopping-cart" />장바구니</button>
-      <button><fa class="icon" icon="user" />마이페이지</button>
-    </footer>
+    <Footer />
   </div>
 </template>
 
 <script>
 import productData from '../assets/mock';
+import Header from '../components/ItemList/Header.vue';
 import Item from '../components/ItemList/Item.vue';
+import Footer from '../components/ItemList/Footer.vue';
 
 export default {
-  components: { Item },
+  components: { Item, Header, Footer },
   name: 'ItemListPage',
   data() {
     return {
-      title: 'My Shopping Mall',
       productData,
     };
   },
@@ -46,44 +42,5 @@ ul {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-}
-
-h1 {
-  margin: 0;
-  padding: 10px 0;
-  text-align: center;
-}
-
-footer {
-  width: inherit;
-  background-color: cadetblue;
-  height: 70px;
-  position: fixed;
-  bottom: 0;
-  display: flex;
-  justify-content: center;
-}
-
-button {
-  border: none;
-  background-color: transparent;
-  text-align: center;
-  width: 25%;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size:14px;
-}
-
-.icon {
-  margin-bottom: 5px;
-  font-size: 16px;
-}
-
-button:hover {
-  transform: scale(1.1);
-  transition: transform .3s ease-in-out;
 }
 </style>
