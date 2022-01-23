@@ -5,7 +5,9 @@
       <span data-test="discountRate" id="discountRate" v-if="product.onSale">
         {{this.discountRate}}%
       </span>
-      <span data-test="price" id="originalPrice">{{product.originalPrice}}원</span>
+      <span data-test="price" id="originalPrice">
+        {{product.originalPrice.toLocaleString()}}원
+      </span>
     </div>
     <span data-test="name">{{product.name}}</span>
     <p data-test="desc">{{product.desc}}</p>
