@@ -1,0 +1,169 @@
+<template>
+  <div id='infoContainer'>
+    <section id='marketInfo'>
+      <img
+        id='marketImgInfo'
+        src='https://genially.blob.core.windows.net/genially/users/572758d6cbb6cca108efc052/58c8ff7b1aa00d07004421d3/58c8ff7b1aa00d07004421d4/6138e3af-be71-4886-b9b7-9664d0b9ae17.png'
+      />
+      <div id='marketMetaInfo'>
+        <p id='marketName'>{{marketInfoData.name}}</p>
+        <p id='marketTagList'>
+          <span class='marketTag'
+                v-for='(tag,idx) in marketInfoData.tags'
+                v-bind:key='idx'>
+                  #{{tag}}
+          </span>
+          <span id='marketRate'>마켓 만족도 {{marketInfoData.rate}}%</span>
+        </p>
+      </div>
+      <div id='marketStarInfo'>
+        <button id='starBtn'>
+          <fa :icon="['far', 'star']" style='color: red' />
+        </button>
+        <label for='star' id='starText'>{{marketInfoData.likes}}</label>
+      </div>
+    </section>
+    <section id='itemInfo'>
+      <h2 id='itemName'>{{mainInfoData.name}}</h2>
+      <div id='row'>
+        <div id='itemPriceInfo' v-if='mainInfoData.onSale'>
+          <span id='discountRate'>{{mainInfoData.salePercentage}}%</span>
+          <span id='discountPrice'>{{mainInfoData.salePrice}}원</span>
+          <span id='originalPriceOnSale'>{{mainInfoData.originalPrice}}원</span>
+        </div>
+        <div id='itemPriceInfo' v-else>
+          <span id='originalPrice'>{{mainInfoData.originalPrice}}원</span>
+        </div>
+        <button><fa icon='share-alt' id='shareBtn'/></button>
+      </div>
+    </section>
+  </div>
+</template>
+
+<script>
+export default {
+  props: ['marketInfoData', 'mainInfoData'],
+};
+</script>
+
+<style scoped>
+#infoContainer {
+  height: 160px;
+  width: 100%;
+}
+
+#marketInfo {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+img {
+  display: block;
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+#marketMetaInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  width: 100%;
+}
+
+#marketName {
+  font-weight: 600;
+}
+
+#marketTagList {
+  font-size: 13px;
+}
+
+#marketStarInfo {
+  display: flex;
+  flex-direction: column;
+  color: red;
+}
+
+.marketTag {
+  border-radius: 5px;
+  width: 50px;
+  height: 20px;
+  background-color: rgb(226, 248, 255);
+  padding: 2px 3px;
+  font-size: 11px;
+  margin-right: 4px;
+}
+
+#marketRate {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+#marketRate::before {
+  content: '﹒';
+}
+
+#itemInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 15px;
+  width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#itemName {
+  width: 100%;
+  text-align: start;
+  margin-bottom: 5px;
+  font-size: 20px;
+}
+
+#itemPriceInfo {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+#discountRate {
+  font-size: 20px;
+  color: red;
+  font-weight: 600;
+  margin-right: 7px;
+}
+
+#discountPrice {
+  font-size: 20px;
+  font-weight: 600;
+  margin-right: 7px;
+}
+
+#originalPriceOnSale {
+  color: rgba(0,0,0,.3);
+  text-decoration: line-through;
+  font-weight: 600;
+}
+
+#originalPrice {
+  font-weight: 600;
+  font-size: 20px;
+}
+
+#row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+#shareBtn {
+  font-size: 18px;
+  font-weight: 300;
+  color : rgba(0,0,0,.3);
+}
+</style>
