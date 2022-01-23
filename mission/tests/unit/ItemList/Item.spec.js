@@ -13,11 +13,13 @@ describe('Item', () => {
     const wrapper = mount(Item);
 
     await wrapper.setData({
-      img : 'https://images.unsplash.com/photo-1601762603339-fd61e28b698a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80'
+      product : {
+        img : 'https://images.unsplash.com/photo-1601762603339-fd61e28b698a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80'
+      }
     })
 
   expect(wrapper.find('img').exists()).toBe(true);
-  expect(wrapper.find('img').attributes('src')).toEqual(wrapper.vm.img);
+  expect(wrapper.find('img').attributes('src')).toEqual(wrapper.vm.product.img);
   })
 
   //product 이름있는지 확인
@@ -62,7 +64,7 @@ describe('Item', () => {
     })
 
     const discountRate = Math.round((wrapper.vm.originalPrice-wrapper.vm.discountPrice)/wrapper.vm.originalPrice*100);
-
+    
     expect(wrapper.get('[data-test="discountRate"]').text()).toEqual(discountRate + '%');
   })
 });
