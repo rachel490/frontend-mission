@@ -2,17 +2,8 @@
   <div id="item-list-page">
     <h1 data-test="title">{{title}}</h1>
     <ul data-test="product-list">
-      <item />
-      <item />
-      <item />
-      <item />
-      <item />
-      <item />
-      <item />
-      <item />
-      <item />
-      <item />
-      <item />
+      <item v-for="(item,idx) in productData" v-bind:key="idx" v-bind:product="item" />
+      <item v-for="(item,idx) in productData" v-bind:key="idx" v-bind:product="item" />
     </ul>
     <footer data-test="footer">
       <button><fa class="icon" icon="home" />홈</button>
@@ -24,6 +15,7 @@
 </template>
 
 <script>
+import productData from '../assets/mock';
 import Item from '../components/ItemList/Item.vue';
 
 export default {
@@ -32,6 +24,7 @@ export default {
   data() {
     return {
       title: 'My Shopping Mall',
+      productData,
     };
   },
 };
